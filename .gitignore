@@ -1,0 +1,4 @@
+_*
+cluster-key*
+**/group_vars/[a-z]*
+.DS_Store

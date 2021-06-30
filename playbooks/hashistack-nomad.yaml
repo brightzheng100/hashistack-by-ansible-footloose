@@ -1,0 +1,34 @@
+---
+#
+#
+# Nomad
+#
+# For detailed options, please refer to: https://galaxy.ansible.com/brianshumate/nomad
+#
+#
+- hosts: nomad_instances
+  become: true
+  become_user: root
+  roles:
+    - {role: geerlingguy.docker, tags: ['docker']}
+    - {role: brianshumate.nomad, tags: ['docker', 'nomad']}
+  vars:
+    nomad_version: 1.1.2
+    nomad_datacenter: "dc1"
+    nomad_domain: "consul"
+    nomad_iface: eth0
+    nomad_network_interface: eth0
+    nomad_bind_address: "0.0.0.0"
+    nomad_node_role: both
+    nomad_use_consul: yes
+    nomad_consul_address: http://127.0.0.1:8500
+    nomad_vault_enabled: yes
+    nomad_vault_address: http://172.18.0.2:8200
+    nomad_options: {  'driver.raw_exec.enable': '1' }
+    nomad_network_speed: 0
+    nomad_bootstrap_expect: 3
+    nomad_docker_enable: yes
+    permanent: yes
+    nomad_ports_http: 4646
+    nomad_ports_rpc: 4647
+    nomad_ports_serf: 4648

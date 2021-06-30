@@ -1,0 +1,22 @@
+cluster:
+  name: sandbox
+  privateKey: cluster-key
+machines:
+- count: 3
+  spec:
+    image: quay.io/footloose/ubuntu18.04
+    name: ubuntu-%d
+    networks:
+    - footloose-cluster
+    portMappings:
+    - containerPort: 22
+    - containerPort: 8500   # Consul UI
+      hostPort: 8500
+    - containerPort: 8200   # Vault UI
+      hostPort: 8200
+    - containerPort: 4646   # Nomad UI
+      hostPort: 4646
+    privileged: true
+    volumes:
+    - type: volume
+      destination: /var

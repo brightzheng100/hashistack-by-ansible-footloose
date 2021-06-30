@@ -1,0 +1,2 @@
+- include: hashistack-consul.yaml
+- include: hashistack-vault.yaml

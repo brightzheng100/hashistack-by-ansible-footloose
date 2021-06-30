@@ -1,0 +1,19 @@
+---
+#
+#
+# Vault
+#
+# For detailed options, please refer to: https://galaxy.ansible.com/brianshumate/vault
+#
+#
+- hosts: vault_instances
+  become: true
+  become_user: root
+  roles:
+    - {role: brianshumate.vault, tags: ['vault']}
+  vars:
+    vault_datacenter: "dc1"
+    vault_domain: "consul"
+    vault_iface: "eth0"
+    vault_ui: yes
+    vault_cluster_disable: yes
