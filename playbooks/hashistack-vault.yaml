@@ -12,6 +12,7 @@
   roles:
     - {role: brianshumate.vault, tags: ['vault']}
   vars:
+    vault_version: 1.7.3
     vault_datacenter: "dc1"
     vault_domain: "consul"
     vault_iface: "eth0"

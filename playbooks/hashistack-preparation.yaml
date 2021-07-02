@@ -1,0 +1,19 @@
+---
+#
+#
+# Preparation
+#
+# This is a need to prepare the nodes before installing
+#
+#
+
+- name: Update /etc/reslov.conf
+  hosts: all
+  become: true
+  become_user: root
+  tasks:
+    - name: Update the nameserver in /etc/resolv.conf
+      lineinfile:
+        path: /etc/resolv.conf
+        regexp: '^nameserver'
+        line: 'nameserver 127.0.0.1'

@@ -4,7 +4,7 @@ cluster:
 machines:
 - count: 3
   spec:
-    image: quay.io/footloose/ubuntu18.04
+    image: quay.io/footloose/ubuntu16.04
     name: ubuntu-%d
     networks:
     - footloose-cluster
