@@ -4,6 +4,8 @@ This is a lightweight, semi-automated setup guide for [Consul](https://www.consu
 
 It's not meant for production, instead, it's more for building up a sandbox on one VM, or our laptop.
 
+![Consul](misc/overview.png)
+
 > Note: All these have been built and tested on my MBP, but your miles may vary.
 
 ## Prerequisites
@@ -407,6 +409,18 @@ You should be able to see the user list retrieved from Postgres database, someth
 
 So it all works perfectly fine!
 
+
+## Some Screenshots
+
+Consul:
+![Consul](misc/screenshot-consul.png)
+
+Vault:
+![Vault](misc/screenshot-vault.png)
+
+Nomad:
+![Nomad](misc/screenshot-nomad.png)
+
 ## Clean Up
 
 To clean up, we can simply delete the Footloose container VMs:
@@ -444,3 +458,4 @@ There are some more stuff for further experiments, which may include:
 - Make Vault highly available as a cluster within 3 nodes
 - Enable TLS for secure communication among Consul, Vault and Nomad
 - Enable more "advanced" features by default, like ACL
+- Expose the add by a reverse proxy, or load balancer
